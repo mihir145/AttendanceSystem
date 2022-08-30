@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".authorization.authfragments.ui.launcherscreen.LauncherScreenFragment">
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_register_as_principal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:letterSpacing="0.15"
+        android:padding="15dp"
+        android:text="@string/register_as_principal"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_register_as_faculty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:letterSpacing="0.15"
+        android:padding="15dp"
+        android:text="@string/register_as_faculty"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/btn_register_as_principal" />
+
+    <TextView
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:letterSpacing="0.15"
+        android:text="@string/already_user_login_here"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_register_as_faculty"
+        app:layout_constraintVertical_bias="0.7" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/launcherScreenFragment">
+
+    <fragment
+        android:id="@+id/launcherScreenFragment"
+        android:name="com.example.attendancesystem.authorization.authfragments.ui.launcherscreen.LauncherScreenFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_launcher_screen">
+        <action
+            android:id="@+id/action_launcherScreenFragment_to_faceLoginFragment"
+            app:destination="@id/faceLoginFragment" />
+        <action
+            android:id="@+id/action_launcherScreenFragment_to_facultyRegisterFragment"
+            app:destination="@id/facultyRegisterFragment" />
+        <action
+            android:id="@+id/action_launcherScreenFragment_to_appPinFragment"
+            app:destination="@id/appPinFragment" />
+        <action
+            android:id="@+id/action_launcherScreenFragment_to_loginScreenFragment"
+            app:destination="@id/loginScreenFragment" />
+        <action
+            android:id="@+id/action_launcherScreenFragment_to_principalRegisterFragment"
+            app:destination="@id/principalRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/faceLoginFragment"
+        android:name="com.example.attendancesystem.authorization.authfragments.ui.faceloginscreen.FaceLoginFragment"
+        android:label="@string/login">
+        <action
+            android:id="@+id/action_faceLoginFragment_to_appPinFragment"
+            app:destination="@id/appPinFragment" />
+        <argument
+            android:name="role"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/facultyRegisterFragment"
+        android:name="com.example.attendancesystem.authorization.authfragments.ui.facultyregister.FacultyRegisterFragment"
+        android:label="@string/register"
+        tools:layout="@layout/fragment_faculty_register" >
+        <action
+            android:id="@+id/action_facultyRegisterFragment_to_faceLoginFragment"
+            app:destination="@id/faceLoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/appPinFragment"
+        android:name="com.example.attendancesystem.authorization.authfragments.ui.apppinscreen.AppPinFragment"
+        android:label="Pin"
+        tools:layout="@layout/fragment_app_pin" >
+        <action
+            android:id="@+id/action_appPinFragment_to_launcherScreenFragment"
+            app:destination="@id/launcherScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginScreenFragment"
+        android:name="com.example.attendancesystem.authorization.authfragments.ui.login.LoginScreenFragment"
+        android:label="@string/login">
+        <action
+            android:id="@+id/action_loginScreenFragment_to_faceLoginFragment"
+            app:destination="@id/faceLoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/principalRegisterFragment"
+        android:name="com.example.attendancesystem.authorization.authfragments.ui.principalregister.PrincipalRegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_principal_register">
+        <action
+            android:id="@+id/action_principalRegisterFragment_to_faceLoginFragment"
+            app:destination="@id/faceLoginFragment" />
+    </fragment>
+</navigation>

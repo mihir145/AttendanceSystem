@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_student"
+    app:startDestination="@id/facultyHomeFragment">
+    <fragment
+        android:id="@+id/facultyHomeFragment"
+        android:name="com.example.attendancesystem.faculty.ui.facultyhome.FacultyHomeFragment"
+        android:label="@string/app_name">
+        <action
+            android:id="@+id/action_facultyHomeFragment_to_studentRegisterFragment"
+            app:destination="@id/studentRegisterFragment" />
+        <action
+            android:id="@+id/action_facultyHomeFragment_to_studentListFragment"
+            app:destination="@id/studentListFragment" />
+        <action
+            android:id="@+id/action_facultyHomeFragment_to_verifyFacultyFragment"
+            app:destination="@id/verifyFacultyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentRegisterFragment"
+        android:name="com.example.attendancesystem.faculty.ui.addstudent.StudentRegisterFragment"
+        android:label="Add Student"
+        tools:layout="@layout/fragment_student_register">
+        <action
+            android:id="@+id/action_studentRegisterFragment_to_facultyHomeFragment"
+            app:destination="@id/facultyHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/takeAttendanceFragment"
+        android:name="com.example.attendancesystem.faculty.ui.takeattendance.TakeAttendanceFragment"
+        android:label="@string/take_attendance" />
+    <fragment
+        android:id="@+id/studentListFragment"
+        android:name="com.example.attendancesystem.faculty.ui.studentlist.StudentListFragment"
+        android:label="Students" />
+    <fragment
+        android:id="@+id/verifyFacultyFragment"
+        android:name="com.example.attendancesystem.faculty.ui.verifyfaculty.VerifyFacultyFragment"
+        android:label="Verify">
+        <action
+            android:id="@+id/action_verifyFacultyFragment_to_takeAttendanceFragment"
+            app:destination="@id/takeAttendanceFragment"
+            app:popUpTo="@id/facultyHomeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+</navigation>

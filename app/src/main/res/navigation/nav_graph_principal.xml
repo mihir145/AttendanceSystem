@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_principal"
+    app:startDestination="@id/principalHomeFragment">
+
+    <fragment
+        android:id="@+id/principalHomeFragment"
+        android:name="com.example.attendancesystem.principal.ui.principalhome.PrincipalHomeFragment"
+        android:label="@string/app_name">
+        <action
+            android:id="@+id/action_principalHomeFragment_to_addFacultyFragment"
+            app:destination="@id/addFacultyFragment" />
+        <action
+            android:id="@+id/action_principalHomeFragment_to_facultyListFragment"
+            app:destination="@id/facultyListFragment" />
+        <action
+            android:id="@+id/action_principalHomeFragment_to_verifyPrincipalFragment"
+            app:destination="@id/verifyPrincipalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFacultyFragment"
+        android:name="com.example.attendancesystem.principal.ui.addfaculty.AddFacultyFragment"
+        android:label="Add Faculty" />
+    <fragment
+        android:id="@+id/facultyListFragment"
+        android:name="com.example.attendancesystem.principal.ui.facultylist.FacultyListFragment"
+        android:label="Faculty List" />
+    <fragment
+        android:id="@+id/takeAttendanceFragment3"
+        android:name="com.example.attendancesystem.principal.ui.takeattendance.TakeAttendanceFragment"
+        android:label="{type}">
+        <argument
+            android:name="type"
+            app:argType="string" />
+        <argument android:name="schoolId" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifyPrincipalFragment"
+        android:name="com.example.attendancesystem.principal.ui.verifyuser.VerifyPrincipalFragment"
+        android:label="Verify">
+        <action
+            android:id="@+id/action_verifyPrincipalFragment_to_takeAttendanceFragment3"
+            app:destination="@id/takeAttendanceFragment3"
+            app:popUpTo="@id/principalHomeFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="type"
+            app:argType="string" />
+        <argument
+            android:name="schoolId"
+            app:argType="string" />
+    </fragment>
+</navigation>
